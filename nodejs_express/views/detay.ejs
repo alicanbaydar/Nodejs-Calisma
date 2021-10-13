@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./inc/head')%>
+</head>
+<body>
+    <%-include('./inc/nav')%>
+    <div><h1 class="ms-5">Kitap Detayi</h1></div>
+    <section>
+        <h5>Kitap Adı: <%=kitap.kitapAdi%></h5>
+        <h6>Detayli Kitap Bilgisi: <%=kitap.detayBilgi%></h6>
+        <a class="del" data-doc="<%=kitap._id%>"><p>Kitabı Sil</p></a>
+    </section>
+
+    <script>
+        const del = document.querySelector('a.del')
+        console.log(del)
+        del.addEventListener('click', (e) => {
+        const endpoint = `/kitaplar/${del.dataset.doc}`;
+        console.log(endpoint)
+        fetch(endpoint, {
+            method: 'delete'
+        })
+        .then((response) => response.json())
+        .then((data) => window.location.href = data.redirect)
+        .catch((err)=> {
+            console.log(err)
+        })
+    })
+
+
+
+    </script>
+</body>
+</html>

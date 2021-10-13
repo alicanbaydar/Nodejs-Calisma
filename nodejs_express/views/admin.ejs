@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./inc/head')%>
+</head>
+<body>
+    <%-include('./inc/nav')%>
+    <h1 class="ms-5">Admin Kitap Listesi</h1>
+    <section>
+        <ul>
+            <% kitaplar.forEach(kitap => { %>
+            <li class="mb-5">
+                <h6>Kitap Adı: <%=kitap.kitapAdi%></h6>
+                <h6>Kitap Yazari: <%=kitap.kitapYazari %></h6>
+                <h6>Kitap Sayfa Sayisi: <%=kitap.kitapSayfaNo %></h6>
+                <h6>Detayli Kitap Bilgisi: <%=kitap.detayBilgi%></h6>
+            </li>
+            <% }) %>
+        </ul>
+    </section>
+</body>
+</html>

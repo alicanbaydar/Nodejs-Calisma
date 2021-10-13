@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('./inc/head')%>
+</head>
+<body>
+    <%-include('./inc/nav')%>
+    <section>
+        <form action="/kitapgir" method="post" id="formsayfasi">
+            <input type="text" name="kitapAdi" id="kitapadi" placeholder="Kitap Adi" required>
+            <input type="text" name="kitapYazari" placeholder="Kitap Yazari" required>
+            <input type="number" name="kitapSayfaNo" placeholder="Sayfa Sayisi" required>
+            <textarea id="detayBilgi" name="detayBilgi" placeholder="Detay Bilgi" cols="30" rows="5"></textarea>
+            <input type="submit" value="Kitabı Kaydet">
+        </form>
+    </section>
+</body>
+</html>
