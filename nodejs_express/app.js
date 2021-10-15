@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const kitaplarRoutes = require('./routes/kitaplarRoutes')
 const kitapgirRoutes = require('./routes/kitapgirRoutes')
 const adminRoutes = require('./routes/adminRoutes')
+const authRoutes = require('./routes/authRoutes')
 
 const dbURL = 'mongodb+srv://kullanici:123456a@nodejskitaplik.o2tuf.mongodb.net/node-kitaplik?retryWrites=true&w=majority'
 mongoose.connect(dbURL)
@@ -30,10 +31,7 @@ app.get('/about-us',(req,res)=>{
     res.redirect('about')
 })
 
-app.get('/login', (req,res)=>{
-    res.render('login',{title:'Login'})
-})
-
+app.use('/', authRoutes)
 app.use('/admin', adminRoutes)
 app.use('/kitaplar', kitaplarRoutes)
 app.use('/kitapgir', kitapgirRoutes)
