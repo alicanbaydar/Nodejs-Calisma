@@ -20,7 +20,6 @@ const login_post = async (req,res) => {
         res.redirect('/admin')
     }
     catch(e){
-        console.log('sdx')
         console.log(e)
     }
 }
